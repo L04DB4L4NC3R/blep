@@ -13,6 +13,8 @@ A high availability log sourcing tool for modern DevOps
 - [X] Fast logs sourcing
 - [X] Low bottlenecking
 - [X] Distribute logstash flows from multiple elastic containers
+- [X] Abstraction between persistent and application layer
+- [X] Seamless integration across different codebases
 
 <br />
 
