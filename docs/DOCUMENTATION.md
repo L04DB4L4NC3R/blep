@@ -11,10 +11,10 @@ import mormon "github.com/angadsharma1016/c2c/publisher"
 
 func main() {
     logs := pb.LogStore{
-        "log_id": "1";
-        "timestamp": "20/12/2018";
-        "log": "successfully completed a function";
-        "host": "publisher svc";
+        LogId: "1",
+        Timestamp: "20/12/2018",
+        Log: "successfully completed a function",
+        Host: "publisher svc",
     }
     go mormon.PublishLogs(&logs)
 }
@@ -31,9 +31,16 @@ package main
 
 import mormon "github.com/angadsharma1016/c2c/subscriber"
 
-func 
-
 func main() {
-    go mormon.Subscribe("logs.>", fn)
+    go mormon.Subscribe("logs.>")
 }
+```
+
+<br/>
+<br/>
+
+#### Command line
+
+```
+./bin/publisher "[log ID]" "[Timestamp]" "[Log]" "[Host]" 
 ```

@@ -1,16 +1,15 @@
-package subscriber
+package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/angadsharma1016/c2c/pb"
 	"github.com/gogo/protobuf/proto"
 	nats "github.com/nats-io/go-nats"
 )
 
-type callback func(interface{}) (string, error)
-
-func Subscribe(sub string, cb callback) {
+func Subscribe(sub string) {
 
 	// Create server connection
 	natsConnection, _ := nats.Connect(nats.DefaultURL)
@@ -23,15 +22,13 @@ func Subscribe(sub string, cb callback) {
 			// Handle the message
 			log.Printf("Received message in LogStore service: %+v\n", logsStore)
 		}
-		message, err := cb(logsStore)
-		if err != nil {
-			log.Println(err)
-			return
-		}
-		log.Println(message)
 	})
 
 	// Keep the connection alive
 	select {}
 	//runtime.Goexit()
+}
+
+func main() {
+	go Subscribe(os.Args[1])
 }

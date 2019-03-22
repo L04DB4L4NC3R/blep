@@ -1,0 +1,4 @@
+#!/bin/bash
+
+go build -o bin/publisher publisher/main.go 
+go build -o bin/subscriber subscriber/main.go 

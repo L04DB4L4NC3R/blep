@@ -1,7 +1,8 @@
-package publisher
+package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/angadsharma1016/c2c/pb"
 	"github.com/gogo/protobuf/proto"
@@ -20,4 +21,14 @@ func PublishLogs(logs *pb.LogStore) {
 	// Publish message on subject
 	natsConnection.Publish(subject, data)
 	log.Println("Published message on subject " + subject)
+}
+
+func main() {
+	log := pb.LogStore{
+		LogId:     os.Args[1],
+		Timestamp: os.Args[2],
+		Log:       os.Args[3],
+		Host:      os.Args[4],
+	}
+	go PublishLogs(&log)
 }
