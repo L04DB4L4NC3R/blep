@@ -1,5 +1,5 @@
 # Mormon
-A modern DevOps log manager
+A high availability log sourcing tool for modern DevOps
 
 <br />
 

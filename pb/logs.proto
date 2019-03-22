@@ -1,0 +1,9 @@
+syntax = "proto3";
+package pb;
+
+message LogStore {
+  string log_id = 1;
+  string timestamp = 2;
+  string log = 3;
+  string host = 4;
+}
