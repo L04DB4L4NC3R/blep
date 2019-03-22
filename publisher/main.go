@@ -1,4 +1,4 @@
-package main
+package publisher
 
 import (
 	"log"
@@ -9,7 +9,7 @@ import (
 )
 
 // publishOrderCreated publish an event via NATS server
-func publishLogs(logs *pb.LogStore) {
+func PublishLogs(logs *pb.LogStore) {
 	// Connect to NATS server
 	natsConnection, _ := nats.Connect(nats.DefaultURL)
 	log.Println("Connected to " + nats.DefaultURL)
@@ -20,14 +20,4 @@ func publishLogs(logs *pb.LogStore) {
 	// Publish message on subject
 	natsConnection.Publish(subject, data)
 	log.Println("Published message on subject " + subject)
-}
-
-func main() {
-	logs := pb.LogStore{
-		LogId:     "1",
-		Timestamp: "20/01/01",
-		Log:       "1",
-		Host:      "1",
-	}
-	publishLogs(&logs)
 }
