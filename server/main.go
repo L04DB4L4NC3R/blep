@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 	"net/http"
+
+	"github.com/angadsharma1016/c2c/server/controller"
 )
 
 type server struct {
@@ -10,11 +12,11 @@ type server struct {
 	port string
 }
 
-func (s server) serve(h http.Handler) {
+func (s server) serve(h *http.Handler) {
 	log.Printf("Listening on %s%s", s.host, s.port)
-	http.ListenAndServe(s.host+s.port, h)
+	http.ListenAndServe(s.host+s.port, *h)
 }
 func main() {
 	s := server{"0.0.0.0", ":3000"}
-	s.serve(nil)
+	s.serve(controller.Startup())
 }

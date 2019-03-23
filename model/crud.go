@@ -24,7 +24,7 @@ func (l *Logs) Create() {
 
 }
 
-func (l Logs) Read(c chan []Logs) {
+func Read(c chan []Logs) {
 
 	var (
 		logid string
