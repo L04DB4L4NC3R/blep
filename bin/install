@@ -1,0 +1,19 @@
+#!/bin/bash
+
+sudo bash
+
+curl -L https://raw.githubusercontent.com/angadsharma1016/mormon/master/bin/mormon.sh?token=AdHYJAtscSDvi0PF7-Kw_-gwwsZ0_97gks5cn8_pwA%3D%3D > /usr/local/bin/mormon
+
+curl -L https://github.com/angadsharma1016/mormon/raw/master/bin/publisher > /usr/local/bin/publisher
+
+curl -L https://github.com/angadsharma1016/mormon/raw/master/bin/subscriber > /usr/local/bin/subscriber
+
+curl -L https://github.com/angadsharma1016/mormon/raw/master/bin/start > /usr/local/bin/start
+
+curl -L https://raw.githubusercontent.com/angadsharma1016/mormon/master/bin/testPub?token=AdHYJKoX5K-COEyoFrcd4xbvFqXMH1O2ks5cn9DMwA%3D%3D > /usr/local/bin/testPub
+
+curl -L https://raw.githubusercontent.com/angadsharma1016/mormon/master/bin/run-env?token=AdHYJMbLFtf0E9GWlzYtAHnj93mIU0qEks5cn9EFwA%3D%3D > /usr/local/bin/run-env
+
+curl -L https://raw.githubusercontent.com/angadsharma1016/mormon/master/bin/run-safe-env?token=AdHYJIyLr1Orq9PGRlAzL0dkGrzPkGmYks5cn9E0wA%3D%3D > /usr/local/bin/run-safe-env
+
+curl -L https://raw.githubusercontent.com/angadsharma1016/mormon/master/bin/callback?token=AdHYJOJuO90_v1VwjtUK6crov8FtN1spks5cn9FawA%3D%3D > /usr/local/bin/callback
