@@ -52,7 +52,7 @@ Different containers consuming from a single DB lead to network bottlenecking. d
 
 <br />
 
-![orbitDB layers](./images/rqlite.png)
+![rqlite](./images/rqlite.png)
 
 
 <br />
@@ -84,7 +84,7 @@ chmod +x bin/*
 #### Run server
 
 ```
-./bin/start
+./bin/start -p 3000
 ```
 
 <br/>
@@ -103,5 +103,19 @@ On the occurence of the event, subscriber will run `./bin/callback`
 
 ```
 ./bin/subscriber "[event name]" "[callback executible]"
+```
+
+## Introducing the mormon CLI
+
+```
+usage: mormon [subcommand] [args]
+mormon build <----------------------------------------------------------> build from source, go needed
+mormon run-env <--------------------------------------------------------> run the nats and rqlite env
+mormon run-safe-env <---------------------------------------------------> run-env for the case docker-compose is not present
+mormon run-env stop <---------------------------------------------------> stop the nats and rqlite env
+mormon start -p [port] <------------------------------------------------> stop the nats and rqlite env
+mormon publisher [logId] [timestamp] [log] [host] <---------------------> publish an event
+mormon subscriber logs.[host] [callback executible] <-------------------> subscribe for an event
+mormon mock-logs <------------------------------------------------------> generate logs for testing
 ```
 
