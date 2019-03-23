@@ -6,15 +6,16 @@ A high availability log sourcing tool for modern DevOps
 ### Our implementation
 ---
 
-- [X] A production ready package
+- [X] Decentralizing calls to a distributed log-store, `rqlite`
+- [X] Fast logs sourcing using `NATS` and `gRPC`
+- [X] Low bottlenecking
+- [X] Abstraction between persistent (subscriber) and application (publisher) layer
 - [X] Easily deployable and testable image build
 - [X] Easy integration with an existing ELK stack
-- [X] Decentralizing calls to log-store
-- [X] Fast logs sourcing
-- [X] Low bottlenecking
-- [X] Distribute logstash flows from multiple elastic containers
-- [X] Abstraction between persistent (subscriber) and application (publisher) layer
 - [X] Seamless integration across different codebases
+- [X] Self container binaries
+- [X] Inbuilt analytics and benchmarks
+- [X] `Mormon` CLI interface
 
 <br />
 
@@ -54,6 +55,24 @@ Different containers consuming from a single DB lead to network bottlenecking. d
 
 ![rqlite](./images/rqlite.png)
 
+
+<br />
+<br />
+
+
+## Introducing the mormon CLI
+
+```
+usage: mormon [subcommand] [args]
+mormon build <----------------------------------------------------------> build from source, go needed
+mormon run-env <--------------------------------------------------------> run the nats and rqlite env
+mormon run-safe-env <---------------------------------------------------> run-env for the case docker-compose is not present
+mormon run-env stop <---------------------------------------------------> stop the nats and rqlite env
+mormon start -p [port] <------------------------------------------------> stop the nats and rqlite env
+mormon publisher [logId] [timestamp] [log] [host] <---------------------> publish an event
+mormon subscriber logs.[host] [callback executible] <-------------------> subscribe for an event
+mormon mock-logs <------------------------------------------------------> generate logs for testing
+```
 
 <br />
 
@@ -105,17 +124,4 @@ On the occurence of the event, subscriber will run `./bin/callback`
 ./bin/subscriber "[event name]" "[callback executible]"
 ```
 
-## Introducing the mormon CLI
-
-```
-usage: mormon [subcommand] [args]
-mormon build <----------------------------------------------------------> build from source, go needed
-mormon run-env <--------------------------------------------------------> run the nats and rqlite env
-mormon run-safe-env <---------------------------------------------------> run-env for the case docker-compose is not present
-mormon run-env stop <---------------------------------------------------> stop the nats and rqlite env
-mormon start -p [port] <------------------------------------------------> stop the nats and rqlite env
-mormon publisher [logId] [timestamp] [log] [host] <---------------------> publish an event
-mormon subscriber logs.[host] [callback executible] <-------------------> subscribe for an event
-mormon mock-logs <------------------------------------------------------> generate logs for testing
-```
 
