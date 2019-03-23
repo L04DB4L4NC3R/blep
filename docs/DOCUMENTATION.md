@@ -5,7 +5,7 @@
 #### Publisher side
 
 ```
-./bin/publisher "[log ID]" "[Timestamp]" "[Log]" "[Host]" 
+./bin/publisher "[log ID]" "[Timestamp]" "[Log]" "[Host]" "[y,n; create table]"
 ```
 
 <br/>

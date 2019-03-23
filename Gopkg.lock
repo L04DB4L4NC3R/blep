@@ -47,6 +47,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:ac98a049d5c99c7baf9f164f81a6398be99e21c97f08f6b3e1cafe3315158793"
+  name = "github.com/raindog308/gorqlite"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "c62bc61bd0f65399b9c103badbf9cfe58f99bcb4"
+
+[[projects]]
+  branch = "master"
   digest = "1:d5891c5bca9c62e5d394ca26491d2b710a1dc08cedeb0ca8f9ac4c3305120b02"
   name = "golang.org/x/crypto"
   packages = [
@@ -63,6 +71,7 @@
     "github.com/gogo/protobuf/proto",
     "github.com/golang/protobuf/proto",
     "github.com/nats-io/go-nats",
+    "github.com/raindog308/gorqlite",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
