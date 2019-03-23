@@ -15,6 +15,8 @@ func Startup() *http.Handler {
 		}{true})
 	})
 	mux.HandleFunc("/api/v1/read", readLogs())
+	mux.HandleFunc("/api/v1/publish", publish())
+	mux.HandleFunc("/api/v1/subscribe", subscribe())
 	corsMux := cors.Default().Handler(mux)
 	return &corsMux
 }
