@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	subscriber.Subscribe(os.Args[1])
+	subscriber.Subscribe(os.Args[1], os.Args[2])
 	select {}
 }

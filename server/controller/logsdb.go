@@ -18,7 +18,8 @@ type Publisher struct {
 }
 
 type Subscriber struct {
-	Service string `json:"service"`
+	Service  string `json:"service"`
+	Callback string `json:"callback"`
 }
 
 func readLogs() http.HandlerFunc {
@@ -51,6 +52,6 @@ func subscribe() http.HandlerFunc {
 		var sub Subscriber
 		json.NewDecoder(r.Body).Decode(&sub)
 
-		subscriber.Subscribe(sub.Service)
+		subscriber.Subscribe(sub.Service, sub.Callback)
 	}
 }

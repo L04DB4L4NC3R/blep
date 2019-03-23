@@ -90,8 +90,9 @@ chmod +x bin/*
 <br/>
 
 #### Subscriber side
+On the occurence of the event, subscriber will run `./bin/callback`
 
 ```
-./bin/subscriber "event name"
+./bin/subscriber "[event name]" "[callback executible]"
 ```
 

@@ -13,5 +13,5 @@
 #### Subscriber side
 
 ```
-./bin/subscriber "event name"
+./bin/subscriber "[event name]" "[callback binary]"
 ```
