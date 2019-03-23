@@ -1,6 +1,12 @@
 #!/bin/bash
 
-docker run -d -p 4001:4001 -p4002:4002 rqlite/rqlite
-gnatsd& &>/dev/null
+if [[ $1 == "stop" ]]; then
+docker-compose down
+kill `pgrep gnatsd`
+exit
+fi
+
+docker-compose up -d
+./bin/server
 
 echo "NATS and rqlite working"

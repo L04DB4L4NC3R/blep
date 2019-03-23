@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/angadsharma1016/c2c/model"
 	"github.com/angadsharma1016/c2c/server/controller"
 )
 
@@ -17,6 +18,8 @@ func (s server) serve(h *http.Handler) {
 	http.ListenAndServe(s.host+s.port, *h)
 }
 func main() {
+	con := model.Connect()
+	defer con.Close()
 	s := server{"0.0.0.0", ":3000"}
 	s.serve(controller.Startup())
 }

@@ -25,7 +25,7 @@ func PublishLogs(logs *pb.LogStore) {
 }
 
 func main() {
-	con := model.Connect(os.Args[5])
+	con := model.Connect()
 	defer con.Close()
 	logg := pb.LogStore{
 		LogId:     os.Args[1],
@@ -33,7 +33,7 @@ func main() {
 		Log:       os.Args[3],
 		Host:      os.Args[4],
 	}
-	go PublishLogs(&logg)
+	PublishLogs(&logg)
 	l := model.Logs{os.Args[1], os.Args[2], os.Args[3], os.Args[4]}
-	go l.Create()
+	l.Create()
 }

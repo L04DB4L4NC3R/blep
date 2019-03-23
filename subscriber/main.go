@@ -25,10 +25,11 @@ func Subscribe(sub string) {
 	})
 
 	// Keep the connection alive
-	select {}
+	//select {}
 	//runtime.Goexit()
 }
 
 func main() {
-	go Subscribe(os.Args[1])
+	Subscribe(os.Args[1])
+	select {}
 }
