@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run -p 4001:4001 -p4002:4002 rqlite/rqlite
+
