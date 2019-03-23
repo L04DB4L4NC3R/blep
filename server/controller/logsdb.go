@@ -10,7 +10,6 @@ import (
 	"github.com/angadsharma1016/c2c/model"
 	"github.com/angadsharma1016/c2c/pb"
 	publisher "github.com/angadsharma1016/c2c/publisher/pub"
-	subscriber "github.com/angadsharma1016/c2c/subscriber/sub"
 	"github.com/gogo/protobuf/proto"
 )
 
@@ -35,7 +34,6 @@ type Benchmarks struct {
 	PublishedCalls   int           `json:"published-calls"`
 	ProtoMarshalTime time.Duration `json:"proto-marshal-time"`
 	JSONDecodingTime time.Duration `json:"JSON-decoding-time"`
-	SubscribingTime  time.Duration `json:"subscribing-time"`
 	NATSConnTime     time.Duration `json:"nats-conn-time"`
 }
 
@@ -103,9 +101,9 @@ func benchmark() http.HandlerFunc {
 		benchmark.NATSConnTime = time.Since(natsTime)
 
 		// subscribe to testnet
-		subsTime := time.Now()
-		subscriber.Subscribe("logs.testnet", "callback")
-		benchmark.SubscribingTime = time.Since(subsTime)
+		// subsTime := time.Now()
+		// subscriber.Subscribe("logs.testnet", "callback")
+		// benchmark.SubscribingTime = time.Since(subsTime)
 
 		logs := pb.LogStore{
 			LogId:     "test",
