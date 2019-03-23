@@ -3,4 +3,4 @@
 
 go build -o bin/publisher publisher/main.go 
 go build -o bin/subscriber subscriber/main.go
-go build -o bin/server server/main.go
+go build -o bin/start server/main.go

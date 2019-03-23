@@ -71,7 +71,6 @@ cd mormon
 chmod +x bin/*
 ./bin/build
 ./bin/run-env
-./bin/start
 ```
 
 #### Stop both 
@@ -81,6 +80,15 @@ chmod +x bin/*
 ```
 
 <br/>
+
+#### Run server
+
+```
+./bin/start
+```
+
+<br/>
+
 
 #### Publisher side
 
