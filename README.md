@@ -58,3 +58,40 @@ Different containers consuming from a single DB lead to network bottlenecking. d
 <br />
 
 
+## Project instructions
+Build environment specification
+
+<br/>
+
+#### Run NATS and rqlite
+
+```
+git clone https://angadsharma1016/mormon
+cd mormon
+chmod +x bin/*
+./bin/build
+./bin/run
+```
+
+#### Stop both 
+
+```
+./bin/run stop
+```
+
+<br/>
+
+#### Publisher side
+
+```
+./bin/publisher "[log ID]" "[Timestamp]" "[Log]" "[Host]"
+```
+
+<br/>
+
+#### Subscriber side
+
+```
+./bin/subscriber "event name"
+```
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./bin/publisher "test" "test" "test" "test" &>/dev/null

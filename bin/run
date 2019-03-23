@@ -2,11 +2,12 @@
 
 if [[ $1 == "stop" ]]; then
 docker-compose down
-kill `pgrep gnatsd`
 exit
 fi
 
 docker-compose up -d
+sleep 2 # For testing pub
+./bin/testPub
 ./bin/server
 
 echo "NATS and rqlite working"
