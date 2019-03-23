@@ -8,6 +8,5 @@ fi
 docker-compose up -d
 sleep 3 # For testing pub
 ./bin/testPub
-./bin/server
 
 echo "NATS and rqlite working"
