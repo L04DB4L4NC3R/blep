@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ $1 == "stop" ]]; then
+docker-compose down
+exit
+fi
+
+curl -L https://raw.githubusercontent.com/angadsharma1016/mormon/master/docker-compose.yml?token=AdHYJHsHmpi6fcFdzZkucq1t359bBE8Aks5cn8x3wA%3D%3D | docker-compose up -d
+sleep 3 # For testing pub
+./bin/testPub
+
+echo "NATS and rqlite working"

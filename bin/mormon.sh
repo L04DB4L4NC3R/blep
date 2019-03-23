@@ -1,0 +1,106 @@
+#!/bin/bash
+
+clear
+
+if [[ $1 == "build" ]] && [[ $2 == "" ]]; then
+
+./bin/build
+
+elif [[ $1 == "run-env" ]] && [[ $2 == "" ]]; then
+
+if !type docker >/dev/null 2>&1; then
+
+echo "docker is not installed, please install docker"
+
+exit
+
+fi
+
+if !type docker-compose >/dev/null 2>&1; then
+
+echo "docker-compose is not installed, please install docker-compose"
+exit
+
+fi
+
+./bin/run-env
+
+elif [[ $1 == "run-safe-env" ]] && [[ $2 == "" ]]; then
+
+if !type docker >/dev/null 2>&1; then
+
+echo "docker is not installed, please install docker"
+
+exit
+
+fi
+
+if !type docker-compose >/dev/null 2>&1; then
+
+echo "docker-compose is not installed, please install docker-compose"
+exit
+
+fi
+
+./bin/run-safe-env
+
+elif [[ $1 == "run-env" ]] && [[ $2 == "stop" ]]; then
+
+./bin/run-env stop
+
+
+elif [[ $1 == "run-safe-env" ]] && [[ $2 == "stop" ]]; then
+
+./bin/run-safe-env stop
+
+elif [[ $1 == "start" ]] && [[ $2 == "" ]]; then
+
+./bin/start -p 3000
+
+elif [[ $1 == "start" ]]; then
+
+./bin/start -p $3
+
+elif [[ $1 == "mock-logs" ]] && [[ $2 == "" ]]; then
+
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test2"
+./bin/publisher "test" "test" "test" "test2"
+./bin/publisher "test" "test" "test" "test2"
+./bin/publisher "test" "test" "test" "test2"
+./bin/publisher "test" "test" "test" "test2"
+
+elif [[ $1 == "publisher" ]] && [[ $2 == "" ]]; then
+
+echo "usage: mormon publisher [logId] [timestamp] [log] [host]"
+
+elif [[ $1 == "publisher" ]]; then
+
+./bin/publisher $2 $3 $4 $5
+
+elif [[ $1 == "subscriber" ]] && [[ $2 == "" ]]; then
+
+echo "usage: mormon subscriber logs.[host] [callback executible]"
+
+elif [[ $1 == "subscriber" ]]; then 
+
+./bin/subscriber $2 $3
+
+else 
+
+echo "usage: mormon [subcommand] [args]" 
+
+echo "mormon build <----------------------------------------------------------> build from source, go needed"
+echo "mormon run-env <--------------------------------------------------------> run the nats and rqlite env"
+echo "mormon run-safe-env <---------------------------------------------------> run-env for the case docker-compose is not present"
+echo "mormon run-env stop <---------------------------------------------------> stop the nats and rqlite env"
+echo "mormon start -p [port] <------------------------------------------------> stop the nats and rqlite env"
+echo "mormon publisher [logId] [timestamp] [log] [host] <---------------------> publish an event"
+echo "mormon subscriber logs.[host] [callback executible] <-------------------> subscribe for an event"
+echo "mormon mock-logs <------------------------------------------------------> generate logs for testing"
+
+fi

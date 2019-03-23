@@ -37,6 +37,7 @@ type Benchmarks struct {
 	NATSConnTime     time.Duration `json:"nats-conn-time"`
 }
 
+// todo, buffered reading, not all at once
 func readLogs() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		c := make(chan []model.Logs)
