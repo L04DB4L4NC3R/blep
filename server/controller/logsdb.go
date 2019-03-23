@@ -53,7 +53,7 @@ func publish() http.HandlerFunc {
 		json.NewDecoder(r.Body).Decode(&pub)
 		logg := pb.LogStore{
 			LogId:     pub.ID,
-			Timestamp: pub.Timestamp,
+			Timestamp: fmt.Sprintf("%v", time.Now()),
 			Log:       pub.Log,
 			Host:      pub.Host,
 		}
