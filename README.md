@@ -20,7 +20,7 @@ A high availability log sourcing tool for modern DevOps
 
 ### Why NATS?
 ---
-NATS is an event sourcing tool which we will be using to publish logs and distribute related data between different services. The reason for NATS is:
+[NATS](https://github.com/nats-io/go-nats.git) is an event sourcing tool which we will be using to publish logs and distribute related data between different services. The reason for NATS is:
 
 * RabbitMQ is limited to HTTP and HTTPS natively
 
@@ -37,20 +37,22 @@ NATS is an event sourcing tool which we will be using to publish logs and distri
 <br />
 <br />
 
-### Why orbitDB?
+### The need for a distributed DB
 ---
-While integrating with the ELK stack, we want different elastic containers to feed from a single DB. But this will lead to network bottlenecking. orbitDB gives us the following advantages:
+Different containers consuming from a single DB lead to network bottlenecking. distributed databases give us the advantage in terms of reducing request overhead. In this implementation we have used [rqlite](https://github.com/rqlite/rqlite.git), because:
 
-* It has a native support for immutable logs store
+* It is very lightweight, and written in go
 
-* It leverages peer to peer networking.
+* Forming a cluster is very easy.    
 
-* It uses IPFS, and peer to peer networking reduces bottlenecking
+* It is fast and fault tolerant
+
+* It has an inbuilt backup and recovery mechanism
 
 
 <br />
 
-![orbitDB layers](./images/orbitDB1.png)
+![orbitDB layers](./images/rqlite.png)
 
 
 <br />

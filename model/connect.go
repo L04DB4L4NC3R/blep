@@ -1,4 +1,4 @@
-package main
+package model
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"github.com/raindog308/gorqlite"
 )
 
-func main() {
+func Connect() {
 	conn, err := gorqlite.Open("http://")
 	if err != nil {
 		log.Println(err)
