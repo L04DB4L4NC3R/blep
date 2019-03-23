@@ -44,6 +44,10 @@ func publish() http.HandlerFunc {
 		publisher.PublishLogs(&logg)
 		l := model.Logs{pub.ID, pub.Timestamp, pub.Log, pub.Host}
 		l.Create()
+
+		json.NewEncoder(w).Encode(struct {
+			Status bool `json:"status"`
+		}{true})
 	}
 }
 
@@ -53,5 +57,9 @@ func subscribe() http.HandlerFunc {
 		json.NewDecoder(r.Body).Decode(&sub)
 
 		subscriber.Subscribe(sub.Service, sub.Callback)
+
+		json.NewEncoder(w).Encode(struct {
+			Status bool `json:"status"`
+		}{true})
 	}
 }
