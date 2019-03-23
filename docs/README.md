@@ -32,7 +32,7 @@ A high availability log sourcing tool for modern DevOps
 
 <br />
 
-![NATS](./images/nats.png)
+![NATS](../images/nats.png)
 
 <br />
 <br />
@@ -52,7 +52,7 @@ Different containers consuming from a single DB lead to network bottlenecking. d
 
 <br />
 
-![orbitDB layers](./images/rqlite.png)
+![orbitDB layers](../images/rqlite.png)
 
 
 <br />
