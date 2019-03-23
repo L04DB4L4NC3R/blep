@@ -21,3 +21,9 @@ func PublishLogs(logs *pb.LogStore) {
 	natsConnection.Publish(subject, data)
 	log.Println("Published message on subject " + subject)
 }
+
+func ConnReturn() *nats.Conn {
+	natsConnection, _ := nats.Connect(nats.DefaultURL)
+	log.Println("Connected to " + nats.DefaultURL)
+	return natsConnection
+}

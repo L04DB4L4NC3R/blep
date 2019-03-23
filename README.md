@@ -70,13 +70,14 @@ git clone https://angadsharma1016/mormon
 cd mormon
 chmod +x bin/*
 ./bin/build
-./bin/run
+./bin/run-env
+./bin/start
 ```
 
 #### Stop both 
 
 ```
-./bin/run stop
+./bin/run-env stop
 ```
 
 <br/>
