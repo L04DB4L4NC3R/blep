@@ -13,7 +13,7 @@ A high availability log sourcing tool for modern DevOps
 - [X] Easily deployable and testable image build
 - [X] Easy integration with an existing ELK stack
 - [X] Seamless integration across different codebases
-- [X] Self container binaries
+- [X] Self contained binaries
 - [X] Inbuilt analytics and benchmarks
 - [X] `Mormon` CLI interface
 
