@@ -4,6 +4,8 @@ A high availability log sourcing tool for modern DevOps
 <br />
 
 
+[![Gitter](https://img.shields.io/badge/chat-on%20gitter-blue.svg?style=for-the-badge&logo=appveyor)](https://gitter.im/mormon-devops/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 [![demo](https://img.shields.io/badge/view%20demo-youtube-orange.svg?style=for-the-badge&logo=appveyor)](https://www.youtube.com/watch?v=u2-FNYZKUsE&feature=youtu.be) 
 

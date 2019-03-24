@@ -1,4 +1,5 @@
 ### Accepting contributions
+Everyone is free to create issues
 
 <br />
 
