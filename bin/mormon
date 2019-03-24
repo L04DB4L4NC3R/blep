@@ -4,7 +4,7 @@ clear
 
 if [[ $1 == "build" ]] && [[ $2 == "" ]]; then
 
-build
+./bin/build
 
 elif [[ $1 == "run-env" ]] && [[ $2 == "" ]]; then
 
@@ -23,7 +23,7 @@ exit
 
 fi
 
-run-env
+./bin/run-env
 
 elif [[ $1 == "run-safe-env" ]] && [[ $2 == "" ]]; then
 
@@ -42,37 +42,37 @@ exit
 
 fi
 
-run-safe-env
+./bin/run-safe-env
 
 elif [[ $1 == "run-env" ]] && [[ $2 == "stop" ]]; then
 
-run-env stop
+./bin/run-env stop
 
 
 elif [[ $1 == "run-safe-env" ]] && [[ $2 == "stop" ]]; then
 
-run-safe-env stop
+./bin/run-safe-env stop
 
 elif [[ $1 == "start" ]] && [[ $2 == "" ]]; then
 
-start -p 3000
+./bin/start -p 3000
 
 elif [[ $1 == "start" ]]; then
 
-start -p $3
+./bin/start -p $3
 
 elif [[ $1 == "mock-logs" ]] && [[ $2 == "" ]]; then
 
-publisher "test" "test" "test" "test1"
-publisher "test" "test" "test" "test1"
-publisher "test" "test" "test" "test1"
-publisher "test" "test" "test" "test1"
-publisher "test" "test" "test" "test1"
-publisher "test" "test" "test" "test2"
-publisher "test" "test" "test" "test2"
-publisher "test" "test" "test" "test2"
-publisher "test" "test" "test" "test2"
-publisher "test" "test" "test" "test2"
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test1"
+./bin/publisher "test" "test" "test" "test2"
+./bin/publisher "test" "test" "test" "test2"
+./bin/publisher "test" "test" "test" "test2"
+./bin/publisher "test" "test" "test" "test2"
+./bin/publisher "test" "test" "test" "test2"
 
 elif [[ $1 == "publisher" ]] && [[ $2 == "" ]]; then
 
@@ -80,7 +80,7 @@ echo "usage: mormon publisher [logId] [timestamp] [log] [host]"
 
 elif [[ $1 == "publisher" ]]; then
 
-publisher $2 $3 $4 $5
+./bin/publisher $2 $3 $4 $5
 
 elif [[ $1 == "subscriber" ]] && [[ $2 == "" ]]; then
 
@@ -88,7 +88,7 @@ echo "usage: mormon subscriber logs.[host] [callback executible]"
 
 elif [[ $1 == "subscriber" ]]; then 
 
-subscriber $2 $3
+./bin/subscriber $2 $3
 
 else 
 
