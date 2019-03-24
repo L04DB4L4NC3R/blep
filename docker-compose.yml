@@ -18,3 +18,8 @@ services:
     image: angadsharma1016/mormon-ui
     ports:
       - 80:8080
+  mormon-server:
+    container_name: mormon-server
+    build: .
+    ports:
+      - 3000:3000
