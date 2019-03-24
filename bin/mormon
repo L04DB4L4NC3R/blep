@@ -68,11 +68,44 @@ elif [[ $1 == "mock-logs" ]] && [[ $2 == "" ]]; then
 ./bin/publisher "test" "test" "test" "test1"
 ./bin/publisher "test" "test" "test" "test1"
 ./bin/publisher "test" "test" "test" "test1"
+
 ./bin/publisher "test" "test" "test" "test2"
 ./bin/publisher "test" "test" "test" "test2"
 ./bin/publisher "test" "test" "test" "test2"
 ./bin/publisher "test" "test" "test" "test2"
 ./bin/publisher "test" "test" "test" "test2"
+
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+./bin/publisher "test" "test" "test" "test3"
+
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+./bin/publisher "test" "test" "test" "test4"
+
+
 
 elif [[ $1 == "publisher" ]] && [[ $2 == "" ]]; then
 
