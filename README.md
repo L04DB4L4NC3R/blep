@@ -3,7 +3,18 @@ A high availability log sourcing tool for modern DevOps
 
 <br />
 
-### Our implementation
+
+
+[![demo](https://img.shields.io/badge/view%20demo-youtube-orange.svg?style=for-the-badge&logo=appveyor)](https://www.youtube.com/watch?v=u2-FNYZKUsE&feature=youtu.be) 
+
+ [![linkedIn](https://img.shields.io/badge/contact%20me-linkedIn-green.svg?style=for-the-badge&logo=appveyor)](https://www.linkedin.com/in/angad-sharma-07bb38122/) 
+
+
+
+
+<br/>
+
+### Implementation
 ---
 
 - [X] Decentralizing calls to a distributed log-store, `rqlite`
@@ -18,6 +29,10 @@ A high availability log sourcing tool for modern DevOps
 - [X] `Mormon` CLI interface
 
 <br />
+
+<details>
+
+<summary>Technology stack</summary>
 
 ### Why NATS?
 ---
@@ -57,8 +72,8 @@ Different containers consuming from a single DB lead to network bottlenecking. d
 
 
 <br />
-<br />
 
+</details>
 
 ## Introducing the mormon CLI
 
@@ -78,8 +93,9 @@ mormon mock-logs <------------------------------------------------------> genera
 
 
 ## Project instructions
-Build environment specification
 
+<details open>
+<summary>Build environment specification</summary>
 <br/>
 
 #### Run NATS and rqlite
@@ -108,6 +124,15 @@ chmod +x bin/*
 
 <br/>
 
+</details>
+
+
+<br />
+
+## Publisher-subscriber testing
+
+<details open>
+<summary>Commands</summary>
 
 #### Publisher side
 
@@ -115,7 +140,6 @@ chmod +x bin/*
 ./bin/publisher "[log ID]" "[Timestamp]" "[Log]" "[Host]"
 ```
 
-<br/>
 
 #### Subscriber side
 On the occurence of the event, subscriber will run `./bin/callback`
@@ -126,6 +150,8 @@ On the occurence of the event, subscriber will run `./bin/callback`
 
 <br/>
 
-![demo](<iframe width="560" height="315" src="https://www.youtube.com/embed/u2-FNYZKUsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)
+</details>
 
-
+<video
+src="https://www.youtube.com/watch?v=u2-FNYZKUsE&feature=youtu.be">
+</video>
