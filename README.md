@@ -1,4 +1,4 @@
-# Mormon
+# Blep
 A high availability log sourcing tool for modern DevOps
 
 <br />
@@ -77,18 +77,18 @@ Different containers consuming from a single DB lead to network bottlenecking. d
 
 </details>
 
-## Introducing the mormon CLI
+## Introducing the blep CLI
 
 ```
 usage: mormon [subcommand] [args]
-mormon build <----------------------------------------------------------> build from source, go needed
-mormon run-env <--------------------------------------------------------> run the nats and rqlite env
-mormon run-safe-env <---------------------------------------------------> run-env for the case docker-compose is not present
-mormon run-env stop <---------------------------------------------------> stop the nats and rqlite env
-mormon start -p [port] <------------------------------------------------> stop the nats and rqlite env
-mormon publisher [logId] [timestamp] [log] [host] <---------------------> publish an event
-mormon subscriber logs.[host] [callback executible] <-------------------> subscribe for an event
-mormon mock-logs <------------------------------------------------------> generate logs for testing
+blep build <----------------------------------------------------------> build from source, go needed
+blep run-env <--------------------------------------------------------> run the nats and rqlite env
+blep run-safe-env <---------------------------------------------------> run-env for the case docker-compose is not present
+blep run-env stop <---------------------------------------------------> stop the nats and rqlite env
+blep start -p [port] <------------------------------------------------> stop the nats and rqlite env
+blep publisher [logId] [timestamp] [log] [host] <---------------------> publish an event
+blep subscriber logs.[host] [callback executible] <-------------------> subscribe for an event
+blep mock-logs <------------------------------------------------------> generate logs for testing
 ```
 
 <br />
