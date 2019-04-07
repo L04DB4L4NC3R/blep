@@ -4,9 +4,6 @@ A high availability log sourcing tool for modern DevOps
 <br />
 
 
-[![Gitter](https://img.shields.io/badge/chat-on%20gitter-blue.svg?style=for-the-badge&logo=appveyor)](https://gitter.im/mormon-devops/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
-
 [![demo](https://img.shields.io/badge/view%20demo-youtube-orange.svg?style=for-the-badge&logo=appveyor)](https://www.youtube.com/watch?v=u2-FNYZKUsE&feature=youtu.be) 
 
  [![linkedIn](https://img.shields.io/badge/contact%20me-linkedIn-green.svg?style=for-the-badge&logo=appveyor)](https://www.linkedin.com/in/angad-sharma-07bb38122/) 
@@ -80,7 +77,7 @@ Different containers consuming from a single DB lead to network bottlenecking. d
 ## Introducing the blep CLI
 
 ```
-usage: mormon [subcommand] [args]
+usage: blep [subcommand] [args]
 blep build <----------------------------------------------------------> build from source, go needed
 blep run-env <--------------------------------------------------------> run the nats and rqlite env
 blep run-safe-env <---------------------------------------------------> run-env for the case docker-compose is not present
@@ -103,8 +100,8 @@ blep mock-logs <------------------------------------------------------> generate
 #### Run NATS and rqlite
 
 ```
-git clone https://angadsharma1016/mormon
-cd mormon
+git clone https://angadsharma1016/blep
+cd blep
 chmod +x bin/*
 ./bin/build
 ./bin/run-env
